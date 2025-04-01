@@ -2,6 +2,10 @@
  publish = "."
  command = "npm run build"
 
+# Netlify CMS 플러그인 추가
+[[plugins]]
+ package = "netlify-plugin-cms"
+
 # Netlify CMS 관리자 리다이렉트 설정
 [[redirects]]
  from = "/admin/*"
