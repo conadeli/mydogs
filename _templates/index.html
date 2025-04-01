@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My dogs</title>
+    <!-- SEO 최적화 메타태그 -->
+    <meta name="description" content="모든 애완견 강아지 , 반려견들에 대한 정보">
+    <meta name="keywords" content="블로그, HTML, 반응형">
+    <meta name="author" content="블로그 운영자">
+    <!-- 네이버 검색엔진 최적화 -->
+    <meta name="naver-site-verification" content="네이버 인증 코드를 여기에 입력하세요">
+    <!-- 구글 검색엔진 최적화 -->
+    <meta name="google-site-verification" content="구글 인증 코드를 여기에 입력하세요">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Netlify Identity 위젯 -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">My dogs</h1>
+            <p class="site-description">HTML, 이미지, 링크를 활용한 심플한 블로그</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">소개</a></li>
+                <li><a href="#">카테고리</a></li>
+                <li><a href="contact.html">연락처</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="posts">
+            <!-- 블로그 포스트 목록 -->
+            {{posts}}
+        </section>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>소개</h3>
+                <p>이 블로그에 대한 간단한 소개와 목적을 작성하는 공간입니다.</p>
+            </div>
+            <div class="widget">
+                <h3>카테고리</h3>
+                <ul>
+                    {{categories}}
+                </ul>
+            </div>
+            <div class="widget">
+                <h3>최근 글</h3>
+                <ul>
+                    {{recent_posts}}
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My dogs. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+    </script>
+</body>
+</html>

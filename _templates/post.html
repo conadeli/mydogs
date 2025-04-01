@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - My dogs</title>
+    <!-- SEO 최적화 메타태그 -->
+    <meta name="description" content="{{title}}">
+    <meta name="keywords" content="{{tags}}">
+    <meta name="author" content="블로그 운영자">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Netlify Identity 위젯 -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="index.html">My dogs</a></h1>
+            <p class="site-description">HTML, 이미지, 링크를 활용한 심플한 블로그</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">소개</a></li>
+                <li><a href="#">카테고리</a></li>
+                <li><a href="contact.html">연락처</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="posts">
+            <article class="post single-post">
+                <h1 class="post-title">{{title}}</h1>
+                <div class="post-meta">
+                    <span class="date">{{date}}</span>
+                    <span class="category">{{category}}</span>
+                </div>
+                
+                <div class="post-content">
+                    {{thumbnail}}
+                    {{content}}
+                </div>
+                
+                <div class="post-tags">
+                    <strong>태그:</strong>
+                    {{tags}}
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>소개</h3>
+                <p>이 블로그에 대한 간단한 소개와 목적을 작성하는 공간입니다.</p>
+            </div>
+            <div class="widget">
+                <h3>카테고리</h3>
+                <ul>
+                    <li><a href="#">카테고리 1</a></li>
+                    <li><a href="#">카테고리 2</a></li>
+                    <li><a href="#">카테고리 3</a></li>
+                </ul>
+            </div>
+            <div class="widget">
+                <h3>최근 글</h3>
+                <ul id="recent-posts">
+                    <!-- 자동으로 생성됩니다 -->
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My dogs. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+    </script>
+</body>
+</html>
