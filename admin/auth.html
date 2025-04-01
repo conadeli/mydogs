@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Logging in...</title>
+    <script>
+      if (window.opener) {
+        window.opener.postMessage(
+          "authorization:github:success",
+          window.location.origin
+        );
+        window.close();
+      }
+    </script>
+  </head>
+  <body>
+    Logging in...
+  </body>
+</html>
