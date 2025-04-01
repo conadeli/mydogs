@@ -11,3 +11,7 @@
 # Netlify Identity 설정
 [template.environment]
   NETLIFY_IDENTITY_WIDGET_ON = "true"
+
+# 메모리 제한 설정 추가
+[build.environment]
+  NODE_OPTIONS = "--max_old_space_size=4096"
