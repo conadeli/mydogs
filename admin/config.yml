@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: conadeli/mydogs # 깃허브 사용자명/저장소명으로 수정 필요
+  branch: main # 기본 브랜치
+
+media_folder: "images/uploads" # 이미지가 저장될 경로
+public_folder: "/images/uploads" # 공개 URL 경로
+
+# 로컬 개발 환경에서 테스트 가능하게 설정
+local_backend: true
+
+collections:
+  - name: "posts" # 콘텐츠 유형
+    label: "블로그 포스트" # UI에 표시될 이름
+    folder: "_posts" # 포스트가 저장될 폴더
+    create: true # 새 포스트 생성 허용
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # 파일명 형식
+    fields: # 입력 필드 정의
+      - {label: "레이아웃", name: "layout", widget: "hidden", default: "post"}
+      - {label: "제목", name: "title", widget: "string"}
+      - {label: "발행일", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss"}
+      - {label: "카테고리", name: "category", widget: "select", options: ["카테고리1", "카테고리2", "카테고리3"], default: "카테고리1"}
+      - {label: "태그", name: "tags", widget: "list", default: ["태그1"]}
+      - {label: "대표 이미지", name: "thumbnail", widget: "image", required: false}
+      - {label: "본문 형식", name: "format", widget: "select", options: ["markdown", "html"], default: "markdown"}
+      - {label: "본문", name: "body", widget: "markdown", editor_components: ["image", "code-block"]}
+      - {label: "HTML 본문", name: "html_body", widget: "code", output_code_only: true, required: false, default_language: "html", hint: "HTML 형식으로 작성하려면 여기에 코드를 입력하세요. (HTML 형식 선택 시)"}
+
+  - name: "pages" # 페이지 콘텐츠
+    label: "페이지"
+    folder: "_pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "제목", name: "title", widget: "string"}
+      - {label: "레이아웃", name: "layout", widget: "hidden", default: "page"}
+      - {label: "본문", name: "body", widget: "markdown"}
