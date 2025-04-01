@@ -1,9 +1,10 @@
 {
   "name": "simple-blog-cms",
   "version": "1.0.0",
-  "description": "심플한 블로그 CMS",
+  "description": "mydogs CMS",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npm install",
     "start": "npx netlify-cms-proxy-server & live-server",
     "build": "node scripts/build-posts.js"
   },
