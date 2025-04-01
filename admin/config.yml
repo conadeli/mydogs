@@ -2,7 +2,7 @@ backend:
   name: github
   repo: conadeli/mydogs
   branch: main
-  base_url: https://mydogs365.netlify.app   # ✅ 추가!
+  site_url: https://mydogs365.netlify.app   # ✅ 추가!
   
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
