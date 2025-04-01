@@ -15,4 +15,5 @@
 # 메모리 제한 설정 추가
 [build.environment]
  NODE_OPTIONS = "--max_old_space_size=4096"
- NODE_VERSION = "16"
+ NODE_VERSION = "16.20.2"
+ NPM_VERSION = "8.19.4"

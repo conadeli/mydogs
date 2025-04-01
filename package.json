@@ -4,7 +4,6 @@
  "description": "mydogs CMS",
  "main": "index.js",
  "scripts": {
-   "preinstall": "npm install",
    "start": "npx netlify-cms-proxy-server & live-server",
    "build": "node scripts/build-posts.js"
  },
@@ -17,6 +16,7 @@
    "netlify-cms-proxy-server": "^1.3.22"
  },
  "engines": {
-   "node": ">=16.0.0"
+   "node": "16.x",
+   "npm": "8.x"
  }
 }
