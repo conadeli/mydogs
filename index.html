@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>심플 블로그</title>
+    <!-- SEO 최적화 메타태그 -->
+    <meta name="description" content="심플한 반응형 블로그 - 이곳에 블로그 설명을 입력하세요">
+    <meta name="keywords" content="블로그, HTML, 반응형">
+    <meta name="author" content="작성자 이름">
+    <!-- 네이버 검색엔진 최적화 -->
+    <meta name="naver-site-verification" content="네이버 인증 코드를 여기에 입력하세요">
+    <!-- 구글 검색엔진 최적화 -->
+    <meta name="google-site-verification" content="구글 인증 코드를 여기에 입력하세요">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Netlify Identity 위젯 -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">심플 블로그</h1>
+            <p class="site-description">HTML, 이미지, 링크를 활용한 심플한 블로그</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">소개</a></li>
+                <li><a href="#">카테고리</a></li>
+                <li><a href="contact.html">연락처</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="posts">
+            <!-- 블로그 포스트 샘플 - 각 포스트는 이 형식으로 추가 -->
+            <article class="post">
+                <h2 class="post-title"><a href="post-1.html">첫 번째 블로그 포스트 제목</a></h2>
+                <div class="post-meta">
+                    <span class="date">2025년 4월 1일</span>
+                    <span class="author">작성자 이름</span>
+                </div>
+                <div class="post-content">
+                    <img src="images/sample-image.jpg" alt="샘플 이미지" class="featured-image">
+                    <p>이곳에 블로그 포스트 요약을 작성합니다. 블로그 본문의 첫 몇 문장을 보여주어 
+                    독자들이 내용을 미리 파악할 수 있도록 합니다.</p>
+                    <a href="post-1.html" class="read-more">더 읽기</a>
+                </div>
+            </article>
+
+            <article class="post">
+                <h2 class="post-title"><a href="post-2.html">두 번째 블로그 포스트 제목</a></h2>
+                <div class="post-meta">
+                    <span class="date">2025년 3월 28일</span>
+                    <span class="author">작성자 이름</span>
+                </div>
+                <div class="post-content">
+                    <img src="images/sample-image-2.jpg" alt="두 번째 샘플 이미지" class="featured-image">
+                    <p>두 번째 블로그 포스트의 요약 내용입니다. 간단하게 본문 내용을 소개합니다.</p>
+                    <a href="post-2.html" class="read-more">더 읽기</a>
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>소개</h3>
+                <p>이 블로그에 대한 간단한 소개와 목적을 작성하는 공간입니다.</p>
+            </div>
+            <div class="widget">
+                <h3>카테고리</h3>
+                <ul>
+                    <li><a href="#">카테고리 1</a></li>
+                    <li><a href="#">카테고리 2</a></li>
+                    <li><a href="#">카테고리 3</a></li>
+                </ul>
+            </div>
+            <div class="widget">
+                <h3>최근 글</h3>
+                <ul>
+                    <li><a href="post-1.html">첫 번째 블로그 포스트 제목</a></li>
+                    <li><a href="post-2.html">두 번째 블로그 포스트 제목</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 심플 블로그. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+    </script>
+</body>
+</html>

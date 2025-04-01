@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+  command = "npm run build"
+
+# Netlify CMS 관리자 리다이렉트 설정
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Netlify Identity 설정
+[template.environment]
+  NETLIFY_IDENTITY_WIDGET_ON = "true"
