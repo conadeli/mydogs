@@ -1,23 +1,19 @@
 [build]
- publish = "."
- command = "npm run build"
+  publish = "public"  # public 폴더 안의 정적 파일만 배포
+  command = ""        # 정적 사이트라면 빌드 명령어 생략 가능
 
-# Netlify CMS 플러그인 추가
-[[plugins]]
- package = "netlify-plugin-cms"
-
-# Netlify CMS 관리자 리다이렉트 설정
+# Netlify CMS 관리자 페이지 리다이렉트 설정
 [[redirects]]
- from = "/admin/*"
- to = "/admin/index.html"
- status = 200
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
 
-# Netlify Identity 설정
+# Netlify Identity 설정 (Git Gateway 사용 시 필요)
 [template.environment]
- NETLIFY_IDENTITY_WIDGET_ON = "true"
+  NETLIFY_IDENTITY_WIDGET_ON = "true"
 
-# 메모리 제한 설정 추가
+# 메모리 및 버전 설정 (필요 시 유지)
 [build.environment]
- NODE_OPTIONS = "--max_old_space_size=4096"
- NODE_VERSION = "16.20.2"
- NPM_VERSION = "8.19.4"
+  NODE_OPTIONS = "--max_old_space_size=4096"
+  NODE_VERSION = "16.20.2"
+  NPM_VERSION = "8.19.4"
